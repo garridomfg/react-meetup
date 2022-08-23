@@ -1,4 +1,4 @@
-import NewMeetupForm from "../components/meetups/NewMeetupForm";
+import { NewMeetupForm } from "../components/meetups/NewMeetupForm";
 
 export const NewMeetupsPage = () => {
   return (

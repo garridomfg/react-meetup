@@ -1,8 +1,11 @@
+
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 
-export default function NewMeetupForm() {
-  function submitHandler(event) {
+export const NewMeetupForm = () => {
+
+
+  const submitHandler = (event) => {
     event.preventDefault();
   }
 
@@ -26,7 +29,7 @@ export default function NewMeetupForm() {
           <textarea id="description" required rows="5"></textarea>
         </div>
         <div className={classes.actions}>
-          <button>Add Meetup</button>
+          <button type="submit">Add Meetup</button>
         </div>
       </form>
     </Card>
