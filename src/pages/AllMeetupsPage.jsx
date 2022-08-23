@@ -1,11 +1,13 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useFetch } from "../util-hooks/useFetch";
 import { MeetupItem } from "../components/meetups/MeetupItem";
 import classes from "./../components/meetups/MeetupList.module.css";
 import { setMeetups } from "../store/slices/meetup/meetupSlice";
 
 export const AllMeetupsPage = () => {
+  const [posts, setPosts] = useState([]);
+  const { meetups } = useSelector((state) => state.meetups);
   const dispatch = useDispatch();
 
   const { data, loading, error } = useFetch({
@@ -13,17 +15,23 @@ export const AllMeetupsPage = () => {
   });
 
   useEffect(() => {
-    data && dispatch(setMeetups(data));
-  }, [dispatch, data]);
+    if (meetups.length) {
+      setPosts(meetups);
+    } else {
+      setPosts(data);
+      data && dispatch(setMeetups(data));
+    }
+  }, [dispatch, data, meetups]);
 
-  if (loading && !data && !error) return <p>Loading...</p>;
+  if (loading && !posts && !error) return <p>Loading...</p>;
 
   return (
     <section>
       <h1>All Meetups</h1>
-      {!loading && !error && data && (
+      {!loading && !error && posts && (
         <ul className={classes.list}>
-          {data && data.map((item) => <MeetupItem key={item.id} item={item} />)}
+          {posts &&
+            posts.map((item) => <MeetupItem key={item.id} item={item} />)}
         </ul>
       )}
     </section>

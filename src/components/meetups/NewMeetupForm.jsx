@@ -1,32 +1,75 @@
-
+import { useDispatch } from "react-redux";
+import { addMeetup } from "../../store/slices/meetup/meetupSlice";
+import { useForm } from "../../util-hooks/useForm";
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 
 export const NewMeetupForm = () => {
+  const { formState, onInputChange, onResetForm } = useForm({
+    id: Date.now(),
+    title: "",
+    image: "",
+    address: "",
+    description: "",
+    favorite: false,
+  });
 
+  const { title, image, address, description } = formState;
+
+  const dispatch = useDispatch();
 
   const submitHandler = (event) => {
     event.preventDefault();
-  }
+    dispatch(addMeetup(formState));
+    onResetForm();
+  };
 
   return (
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="title">Meetup Title</label>
-          <input type="text" required id="title" />
+          <input
+            value={title}
+            onChange={onInputChange}
+            type="text"
+            required
+            id="title"
+            name="title"
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="image">Meetup Image</label>
-          <input type="url" required id="image" />
+          <input
+            value={image}
+            onChange={onInputChange}
+            type="url"
+            required
+            id="image"
+            name="image"
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="address">Address</label>
-          <input type="text" required id="address" />
+          <input
+            value={address}
+            onChange={onInputChange}
+            type="text"
+            required
+            id="address"
+            name="address"
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="description">Description</label>
-          <textarea id="description" required rows="5"></textarea>
+          <textarea
+            value={description}
+            onChange={onInputChange}
+            id="description"
+            name="description"
+            required
+            rows="5"
+          ></textarea>
         </div>
         <div className={classes.actions}>
           <button type="submit">Add Meetup</button>
@@ -34,4 +77,4 @@ export const NewMeetupForm = () => {
       </form>
     </Card>
   );
-}
+};

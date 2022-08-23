@@ -7,9 +7,12 @@ export const meetupSlice = createSlice({
   },
   reducers: {
     setMeetups: (state, action) => {
-        state.meetups = action.payload
+      state.meetups = action.payload;
+    },
+    addMeetup: (state, action) => {
+      state.meetups = [action.payload, ...state.meetups];
     },
   },
 });
 
-export const { setMeetups} = meetupSlice.actions;
+export const { setMeetups, addMeetup } = meetupSlice.actions;
