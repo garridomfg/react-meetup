@@ -3,18 +3,20 @@ import classes from "./../components/meetups/MeetupList.module.css";
 import { useFetch } from "../util-hooks/useFetch";
 
 export const AllMeetupsPage = () => {
-  const { data } = useFetch({
+  const { data, loading, error } = useFetch({
     url: "/data.json",
   });
 
-  if (!data) return <p>Loading...</p>;
+  if (loading && !data && !error) return <p>Loading...</p>;
 
   return (
     <section>
       <h1>All Meetups</h1>
-      <ul className={classes.list}>
-        {data && data.map((item) => <MeetupItem key={item.id} item={item} />)}
-      </ul>
+      {!loading && !error && data && (
+        <ul className={classes.list}>
+          {data && data.map((item) => <MeetupItem key={item.id} item={item} />)}
+        </ul>
+      )}
     </section>
   );
 };
