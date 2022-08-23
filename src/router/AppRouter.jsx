@@ -1,5 +1,5 @@
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { AllMeetupsPage, Favorites, NewMeetupsPage } from "../pages";
 
 const AppRouter = () => {
@@ -9,6 +9,8 @@ const AppRouter = () => {
         <Route path="/" element={<AllMeetupsPage />} />
         <Route path="new-meetup" element={<NewMeetupsPage />} />
         <Route path="favorites" element={<Favorites />} />
+
+        <Route path="/*" element={<Navigate to='/' />} />
       </Routes>
     </>
   )
