@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import { useSelector } from "react-redux";
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
@@ -51,3 +52,10 @@ export const MeetupItem = ({
     </li>
   );
 };
+
+MeetupItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  handleAddFavorite: PropTypes.func,
+  handleRemoveFavorite: PropTypes.func,
+}
+

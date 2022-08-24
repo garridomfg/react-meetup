@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MeetupItem/> Should match with snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <li
+        class="item"
+        data-test="meet-up-item"
+      >
+        <div
+          class="card"
+        >
+          <div
+            class="image"
+          >
+            <img
+              alt="This is a first meetup"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg"
+            />
+          </div>
+          <div
+            class="content"
+          >
+            <h3>
+              This is a first meetup
+            </h3>
+            <address>
+              Meetupstreet 5, 12345 Meetup City
+            </address>
+            <p>
+              This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!
+            </p>
+          </div>
+          <div
+            class="actions"
+          >
+            <button>
+              Add to favorites
+            </button>
+          </div>
+        </div>
+      </li>
+    </div>
+  </body>,
+  "container": <div>
+    <li
+      class="item"
+      data-test="meet-up-item"
+    >
+      <div
+        class="card"
+      >
+        <div
+          class="image"
+        >
+          <img
+            alt="This is a first meetup"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg"
+          />
+        </div>
+        <div
+          class="content"
+        >
+          <h3>
+            This is a first meetup
+          </h3>
+          <address>
+            Meetupstreet 5, 12345 Meetup City
+          </address>
+          <p>
+            This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!
+          </p>
+        </div>
+        <div
+          class="actions"
+        >
+          <button>
+            Add to favorites
+          </button>
+        </div>
+      </div>
+    </li>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

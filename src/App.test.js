@@ -2,8 +2,8 @@
 /* eslint-disable testing-library/no-debugging-utils */
 import { shallow, mount } from "enzyme";
 import App from "./App";
-import MainNavigation from "./components/layout/MainNavigation";
-import Layout from "./components/layout/Layout";
+import { MainNavigation } from "./components/layout/MainNavigation";
+import { Layout } from "./components/layout/Layout";
 
 /**
  * Factory funcion to create a ShallowWrapper for the App component

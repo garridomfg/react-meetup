@@ -20,6 +20,8 @@ export const AllMeetupsPage = () => {
   });
 
   useEffect(() => {
+    // Se maneja de esta manera, ya que, al no ser un fetch a una API, y no haber peticiones HTTP, la data mockeada es siempre el listado original de 3 objs
+    // de existir algun metodo post, que actualice el listado, este paso no seria necesario
     if (meetups.length) {
       setPosts(meetups);
     } else {

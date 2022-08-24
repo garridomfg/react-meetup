@@ -20,18 +20,25 @@ export const NewMeetupForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const meetupToSend = {
-      ...formState,
-      id: Date.now(),
-    };
-    
-    dispatch(addMeetup(meetupToSend));
-    onResetForm();
+    if (
+      title.trim().length > 1 &&
+      image.trim().length > 1 &&
+      address.trim().length > 1 &&
+      description.trim().length > 1
+    ) {
+      const meetupToSend = {
+        ...formState,
+        id: Date.now(),
+      };
+
+      dispatch(addMeetup(meetupToSend));
+      onResetForm();
+    }
   };
 
   return (
     <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
+      <form data-testid="form" className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="title">Meetup Title</label>
           <input
@@ -41,6 +48,7 @@ export const NewMeetupForm = () => {
             required
             id="title"
             name="title"
+            data-testid="title"
           />
         </div>
         <div className={classes.control}>
@@ -52,6 +60,7 @@ export const NewMeetupForm = () => {
             required
             id="image"
             name="image"
+            data-testid="image"
           />
         </div>
         <div className={classes.control}>
@@ -63,6 +72,7 @@ export const NewMeetupForm = () => {
             required
             id="address"
             name="address"
+            data-testid="address"
           />
         </div>
         <div className={classes.control}>
@@ -74,6 +84,7 @@ export const NewMeetupForm = () => {
             name="description"
             required
             rows="5"
+            data-testid="description"
           ></textarea>
         </div>
         <div className={classes.actions}>

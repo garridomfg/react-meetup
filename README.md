@@ -33,17 +33,17 @@ npm install
 
 ### Compilar y obtener la funcion de hot-reaload para desarrollo
 ```
-npm run serve
+npm start
 ```
 
 ### Compilar para producción
 ```
-npm run build
+npm build
 ```
 
 ### Correr la suit de test
 ```
-npm run test
+npm test
 ```
 
 ### Customize configuration
