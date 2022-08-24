@@ -5,8 +5,8 @@ import Card from "../ui/Card";
 
 export const MeetupItem = ({
   item,
-  handleAddFavorite,
-  handleRemoveFavorite,
+  handleAddFavorite = undefined,
+  handleRemoveFavorite = undefined,
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const { favorites } = useSelector((state) => state.favorites);
