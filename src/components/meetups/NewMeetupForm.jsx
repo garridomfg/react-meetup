@@ -6,12 +6,11 @@ import classes from "./NewMeetupForm.module.css";
 
 export const NewMeetupForm = () => {
   const { formState, onInputChange, onResetForm } = useForm({
-    id: Date.now(),
+    id: undefined,
     title: "",
     image: "",
     address: "",
     description: "",
-    favorite: false,
   });
 
   const { title, image, address, description } = formState;
@@ -20,7 +19,13 @@ export const NewMeetupForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    dispatch(addMeetup(formState));
+
+    const meetupToSend = {
+      ...formState,
+      id: Date.now(),
+    };
+    
+    dispatch(addMeetup(meetupToSend));
     onResetForm();
   };
 

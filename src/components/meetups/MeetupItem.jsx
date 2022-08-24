@@ -14,7 +14,7 @@ export const MeetupItem = ({
   const { id, image, title, address, description } = item;
 
   useEffect(() => {
-    setIsFavorite(!!favorites.includes(item));
+    setIsFavorite(favorites.includes(item));
   }, [favorites, item]);
 
   const handleAddToFavorite = (id) => {
