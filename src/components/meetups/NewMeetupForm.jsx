@@ -20,12 +20,7 @@ export const NewMeetupForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if (
-      title.trim().length > 1 &&
-      image.trim().length > 1 &&
-      address.trim().length > 1 &&
-      description.trim().length > 1
-    ) {
+    if (isFormValid(title, image, address, description)) {
       const meetupToSend = {
         ...formState,
         id: Date.now(),
@@ -36,9 +31,21 @@ export const NewMeetupForm = () => {
     }
   };
 
+  const isFormValid = (...args) => {
+    let valid = true;
+    Object.values(args).forEach((val) => {
+      if (val.trim().length <= 1) valid = false;
+    });
+    return valid;
+  };
+
   return (
     <Card>
-      <form data-testid="form" className={classes.form} onSubmit={submitHandler}>
+      <form
+        data-testid="form"
+        className={classes.form}
+        onSubmit={submitHandler}
+      >
         <div className={classes.control}>
           <label htmlFor="title">Meetup Title</label>
           <input
