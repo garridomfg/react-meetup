@@ -1,15 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { MeetupItem } from "../components/meetups/MeetupItem";
-import { removeFavorite } from "../store/slices/favorites/favoritesSlice";
+import { useFavorite } from "../util-hooks/useFavorite";
 import classes from "./../components/meetups/MeetupList.module.css";
 
 export const Favorites = () => {
+  const { handleRemoveFromFavorite } = useFavorite();
   const { favorites } = useSelector((state) => state.favorites);
-  const dispatch = useDispatch();
-
-  const handleRemoveFromFavorite = (id) => {
-    dispatch(removeFavorite(id));
-  };
 
   return (
     <section>
