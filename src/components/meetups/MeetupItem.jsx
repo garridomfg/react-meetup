@@ -1,13 +1,29 @@
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
 
-export const MeetupItem = ({ item, toggleFavorite }) => {
-  const { id, image, title, address, description, favorite } = item;
-  
+export const MeetupItem = ({
+  item,
+  handleAddFavorite,
+  handleRemoveFavorite,
+}) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const { favorites } = useSelector((state) => state.favorites);
 
-  const handleToggleFavorite = (id) => {
-    toggleFavorite(id);
-  }
+  const { id, image, title, address, description } = item;
+
+  useEffect(() => {
+    setIsFavorite(!!favorites.includes(item));
+  }, [favorites, item]);
+
+  const handleAddToFavorite = (id) => {
+    handleAddFavorite(id);
+  };
+
+  const handleRemoveFromFavorite = (id) => {
+    handleRemoveFavorite(id);
+  };
 
   return (
     <li className={classes.item} data-test="meet-up-item">
@@ -21,10 +37,14 @@ export const MeetupItem = ({ item, toggleFavorite }) => {
           <p>{description}</p>
         </div>
         <div className={classes.actions}>
-          {!favorite ? (
-            <button onClick={() => handleToggleFavorite(id)}>Add to favorites</button>
+          {!isFavorite ? (
+            <button onClick={() => handleAddToFavorite(id)}>
+              Add to favorites
+            </button>
           ) : (
-            <button onClick={() => handleToggleFavorite(id)}>Remove from favorites</button>
+            <button onClick={() => handleRemoveFromFavorite(id)}>
+              Remove from favorites
+            </button>
           )}
         </div>
       </Card>
