@@ -10,8 +10,8 @@ import { useFavorite } from "../util-hooks/useFavorite";
 
 export const AllMeetupsPage = () => {
   const [posts, setPosts] = useState([]);
-  const { meetups } = useSelector((state) => state.meetups);
   const dispatch = useDispatch();
+  const { meetups } = useSelector((state) => state.meetups);
   const { handleAddToFavorite, handleRemoveFromFavorite } =
     useFavorite();
 
