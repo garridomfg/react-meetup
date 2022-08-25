@@ -1,7 +1,8 @@
 ### Challenge técnico
 ```
 Proyecto que forma parte de una entrevista técnica.
-Se utilizaron las siguientes técnologias: ReactJs v17.0.2, react-router-dom v6.3.0, reduxjs/toolkit v1.8.5, react-redux v8.0.2
+Se utilizaron las siguientes técnologias para desarrollo: ReactJs v17.0.2, react-router-dom v6.3.0, reduxjs/toolkit v1.8.5, react-redux v8.0.2
+Se utilizaron las siguientes técnologias para testing: testing-library/react v12.1.2, testing-library/jest-dom v5.16.2
 
 Se recibió un proyecto previamente iniciado sobre el cual se debian realizar algunas modificaciones sobre lo hecho, con la finalidad de agregar features y que sea escalable. Los requerimientos fueron los siguientes: 
 
