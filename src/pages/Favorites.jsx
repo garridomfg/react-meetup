@@ -10,7 +10,7 @@ export const Favorites = () => {
   return (
     <section>
       <h1>Favorites Page</h1>
-      {favorites.length < 1 && <p>There is no favorites Meetups</p>}
+      {favorites.length < 1 && <p className="empty-box">There is no favorites Meetups</p>}
       <ul className={classes.list}>
         {favorites &&
           favorites.map((item) => (
